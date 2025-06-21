@@ -77,23 +77,25 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="bg-card border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
-              >
-                <CardHeader className="pb-2">
-                  <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-xl font-semibold text-white">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+  <Link href={feature.link} key={index}>
+    <Card
+      className="bg-card border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300 cursor-pointer"
+    >
+      <CardHeader className="pb-2">
+        <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
+          {feature.icon}
+        </div>
+        <CardTitle className="text-xl font-semibold text-white">
+          {feature.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-muted-foreground">{feature.description}</p>
+      </CardContent>
+    </Card>
+  </Link>
+))}
+
           </div>
         </div>
       </section>

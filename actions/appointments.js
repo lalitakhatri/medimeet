@@ -407,3 +407,5 @@ export async function getAvailableTimeSlots(doctorId) {
     throw new Error("Failed to fetch available time slots: " + error.message);
   }
 }
+
+
